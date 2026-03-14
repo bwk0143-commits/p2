@@ -1,10 +1,100 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>My First GitHub Page</title>
-</head>
-<body style="background-color:yellow">
-<h1>Welcome to My Website</h1>
-<p>GitHub Pages is working.</p>
+
+<HTML>
+<HEAD>
+<TITLE>MOVING CAR</TITLE>
+<style>
+#sig{
+ width:70px;
+    height:70px;
+    border:1px solid red;
+    position:absolute;
+    top:1px;     
+    right:30px;
+	border-radius:600px;
+    }
+	#sig2{
+ width:70px;
+    height:70px;
+    border:1px solid red;
+    position:absolute;
+    top:80px;     
+    right:30px;
+	border-radius:600px;
+		background-color:white;
+
+    }
+	#sig3{
+ width:70px;
+    height:70px;
+    border:1px solid red;
+    position:absolute;
+    top:160px;     
+    right:30px;
+	border-radius:600px;
+	background-color:white;
+    }
+	</style>
+<SCRIPT>
+
+var imgobj=null;
+var animate;
+var light=null;
+function init()
+{
+    imgobj=document.getElementById('myimage');
+    imgobj.style.position='relative';
+    imgobj.style.left='0px';
+}
+
+function move()
+{
+    imgobj.style.left=parseInt(imgobj.style.left)+10+'px';
+    animate=setTimeout(move,10);
+}
+
+function stop()
+{
+    clearTimeout(animate);
+    imgobj.style.left='0px';
+	 clearInterval(blink);
+		  document.getElementById('sig2').style.background='white';
+       	  document.getElementById('sig3').style.background='red'
+		  document.getElementById('sig').style.background='white';
+
+  }
+   function bt()
+   {
+    move();
+	  document.getElementById('sig').style.background='green';
+blink=setInterval(blinkLight,500);
+document.getElementById('sig').style.background='green';
+  	  
+	}
+
+function blinkLight()
+{
+ var x=document.getElementById("sig2");
+
+ if(x.style.background=="orange")
+     x.style.background="white";
+ else
+     x.style.background="orange";
+}
+
+</SCRIPT>
+</HEAD>
+
+<body onload="init()" >
+<div id="sig"  height="100px" width="100px"></div>
+<div id="sig2"  height="100px" width="100px"></div>
+<div id="sig3"  height="100px" width="100px"></div>
+
+<img id="myimage" src="honkler-clown-world.gif" height="100px" width="100px">
+
+<br><br>
+
+<input type="button" value="start"onclick="bt()">
+<input type="button" value="stop" onclick="stop()">
+
 </body>
 </html>
