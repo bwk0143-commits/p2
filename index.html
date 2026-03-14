@@ -55,7 +55,7 @@ function move()
 function stop()
 {
     clearTimeout(animate);
-    imgobj.style.left='0px';
+    imgobj.style.left=parseInt(imgobj.style.left)+10+'px';
 	 clearInterval(blink);
 		  document.getElementById('sig2').style.background='white';
        	  document.getElementById('sig3').style.background='red'
